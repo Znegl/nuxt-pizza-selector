@@ -124,7 +124,8 @@
     color: var(--link-color, @link-color);
   }
 
-  input, select {
+  input:not([type=range],[type=checkbox]),
+  select {
     background: var(--input-field-background-color, @input-field-background-color);
     border: 0;
     font-size: .8em;
@@ -133,10 +134,6 @@
     padding: 0 .7em;
     height: 2em;
     border-radius: .3em;
-  }
-
-  input[type=checkbox] {
-    height: auto;
   }
 
   button,
