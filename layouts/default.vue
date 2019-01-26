@@ -188,6 +188,7 @@
   }
 
   .main-navigation {
+    flex-shrink: 0;
     padding-top: 2em;
     background: var(--navigation-background-color, black);
     color: var(--navigation-text-color, white);
@@ -203,7 +204,7 @@
   }
 
   .main-content {
-
+    flex-grow: 1;
   }
 
   .dark-mode-button {
