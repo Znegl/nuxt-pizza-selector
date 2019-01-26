@@ -102,6 +102,9 @@
     // UI element colors
     --button-color: @button-color;
     --button-text-color: @button-text-color;
+
+    // Transitions
+    --color-transition: .3s ease-in-out;
   }
 
   *,
@@ -115,6 +118,7 @@
     font-family: 'Open Sans', serif;
     background: var(--main-background-color);
     color: var(--text-color);
+    transition: all var(--color-transition);
 
     &.dark-mode {
       // Main colors
@@ -151,6 +155,7 @@
 
   a {
     color: var(--link-color, @link-color);
+    transition: color var(--color-transition);
   }
 
   input:not([type=range],[type=checkbox]),
@@ -163,6 +168,7 @@
     padding: 0 .7em;
     height: 2em;
     border-radius: .3em;
+    transition: background var(--color-transition);
   }
 
   button,
@@ -178,6 +184,7 @@
     box-shadow: 0 .1em .3em rgba(0, 0, 0, .1);
     padding: 0 .7em;
     height: 2em;
+    transition: all var(--color-transition);
 
     &:hover {
       opacity: .9;
@@ -221,6 +228,7 @@
     padding-top: 2em;
     background: var(--navigation-background-color, black);
     color: var(--navigation-text-color, white);
+    transition: all var(--color-transition);
 
     ul {
       list-style: none;
