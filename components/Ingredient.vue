@@ -14,6 +14,8 @@
 </script>
 
 <style lang="less">
+  @ingredient-hover-color: #BBE2A0;
+
   .ingredient {
     display: inline-block;
     padding: 0 .4em;
@@ -29,7 +31,13 @@
     }
 
     &:hover {
-      background: #BBE2A0;
+      background: @ingredient-hover-color;
+    }
+  }
+
+  .dark-mode .ingredient {
+    &:hover {
+      background: darken(@ingredient-hover-color, 45);
     }
   }
 </style>
