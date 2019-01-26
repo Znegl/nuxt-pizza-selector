@@ -8,7 +8,7 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: pkg.name,
+    title: 'Pizza selector',
     meta: [
       { charset: 'utf-8' },
       {
@@ -18,7 +18,7 @@ module.exports = {
       {
         hid: 'description',
         name: 'description',
-        content: pkg.description,
+        content: 'The perfect tool for selecting the right pizza.',
       },
     ],
     link: [
