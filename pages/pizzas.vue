@@ -1,5 +1,5 @@
 <template>
-  <article>
+  <article class="pizzas-page">
     <h1>List of pizzas</h1>
     <ol>
       <li
