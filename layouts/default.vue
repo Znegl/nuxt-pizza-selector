@@ -14,7 +14,7 @@
       </article>
     </main>
     <button
-      @click="darkModeEnabled = !darkModeEnabled"
+      @click="toggleDarkMode"
       class="dark-mode-button"
       type="button"
       title="Toggle dark mode"
@@ -30,17 +30,46 @@
   export default {
     components: { MainNavigation },
     data() {
+      let darkModeEnabled = false
+
+      if (process.client) {
+        let storedDarkMode = localStorage.getItem('darkMode')
+
+        if (storedDarkMode === undefined) {
+          darkModeEnabled = window.matchMedia('(prefers-color-scheme: dark)').matches
+        } else {
+          darkModeEnabled = storedDarkMode === 'true'
+        }
+      }
+
       return {
-        darkModeEnabled: false,
+        darkModeEnabled,
         supportsIndexedDb: process.server || window.indexedDB,
       }
     },
     head() {
+      const bodyClassName = this.darkModeEnabled ? 'dark-mode' : 'bright-mode'
+
+      if (process.client) {
+        // The body attrs below arent't always updated as expected.
+        // Setting the document body class name directly seems to fix it.
+        document.body.className = bodyClassName
+      }
+
       return {
         bodyAttrs: {
-          class: this.darkModeEnabled ? 'dark-mode' : '',
+          class: bodyClassName,
         },
       }
+    },
+    methods: {
+      toggleDarkMode() {
+        this.darkModeEnabled = !this.darkModeEnabled
+
+        if (process.client) {
+          localStorage.setItem('darkMode', this.darkModeEnabled)
+        }
+      },
     },
   }
 </script>
