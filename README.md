@@ -1,6 +1,22 @@
-# nuxt-pizza-selector
+# Nuxt Pizza selector
 
 > A pizza selector written in Nuxt, Vue, Vuex and IndexedDB. This is mainly created as a hobby project for testing out Vuex and IndexedDB. It also tries to solve my constant issues selecting the best pizzas.
+
+## Current state
+
+Nothing pizza related really works.
+Right now there's only a static page for pizzas with some hardcoded data.
+
+##Progress
+
+* Layout ✅
+* Dark mode (persisted in localStorage) ✅
+* PWA support ✅
+* Fetch initial data from server 👎
+* Vuex 👎
+* Indexed DB 2.0 👎
+* Offline mode 👎
+
 
 ## Build Setup
 
