@@ -7,7 +7,7 @@
 Nothing pizza related really works.
 Right now there's only a static page for pizzas with some hardcoded data.
 
-##Progress
+## Progress
 
 * Layout ✅
 * Dark mode (persisted in localStorage) ✅
