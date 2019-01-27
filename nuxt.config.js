@@ -1,31 +1,39 @@
 const pkg = require('./package')
 
+const appName = 'Pizza selector'
+const appDescription = 'The perfect tool for selecting the right pizza.'
 
 module.exports = {
   mode: 'universal',
+
+  meta: {
+    name: appName,
+    description: appDescription,
+  },
+  manifest: {
+    name: appName,
+    short_name: appName,
+    description: appDescription,
+    background_color: '#EFE9E1',
+    theme_color: '#47494E'
+  },
 
   /*
   ** Headers of the page
   */
   head: {
-    title: 'Pizza selector',
     meta: [
       { charset: 'utf-8' },
       {
         name: 'viewport',
         content: 'width=device-width, initial-scale=1',
       },
-      {
-        hid: 'description',
-        name: 'description',
-        content: 'The perfect tool for selecting the right pizza.',
-      },
     ],
     link: [
       {
         rel: 'icon',
-        type: 'image/x-icon',
-        href: '/favicon.ico',
+        type: 'image/png',
+        href: '/favicon.png',
       },
       {
         rel: 'stylesheet',
