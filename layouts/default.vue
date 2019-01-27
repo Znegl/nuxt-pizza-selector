@@ -231,6 +231,8 @@
     transition: all var(--color-transition);
 
     ul {
+      position: sticky;
+      top: 2em;
       list-style: none;
       padding-left: 0;
     }
