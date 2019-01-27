@@ -246,7 +246,7 @@
 
   .dark-mode-button {
     @size: 2em;
-    position: absolute;
+    position: fixed;
     display: block;
     right: 1em;
     bottom: 1em;
@@ -256,5 +256,30 @@
     text-align: center;
     text-indent: .2em;
     border-radius: 100%;
+  }
+
+  @media (max-width: 40em) {
+    .page-wrapper {
+      display: block;
+
+      .main-content {
+        padding-bottom: 4em;
+      }
+
+      .main-navigation {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 1em;
+
+        > ul {
+          position: static;
+          display: flex;
+          justify-content: space-evenly;
+          margin: 0;
+        }
+      }
+    }
   }
 </style>
