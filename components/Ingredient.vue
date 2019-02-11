@@ -1,13 +1,17 @@
 <template>
-  <li class="ingredient">{{ingredient}}</li>
+  <li class="ingredient">{{ingredient.name}}</li>
 </template>
 
 <script>
   export default {
     props: {
       ingredient: {
-        type: String,
-        default: undefined,
+        type: Object,
+        default: {
+          id: undefined,
+          name: '',
+          subIngredients: [],
+        },
       },
     },
   }

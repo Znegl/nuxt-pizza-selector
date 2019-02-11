@@ -3,15 +3,16 @@
     <h1>List of pizzas</h1>
     <ol>
       <li
-        v-for="pizza in pizzas"
+        v-for="pizza in pizzasWithIngredients"
         :key="pizza.name"
       >
         {{pizza.name}}
+        <CategoryLabel :ingredients="pizza.ingredients"/>
         <br>
         <ul class="ingredients">
           <Ingredient
             v-for="ingredient in pizza.ingredients"
-            :key="ingredient"
+            :key="ingredient.name"
             :ingredient="ingredient"
           />
         </ul>
@@ -21,34 +22,54 @@
 </template>
 
 <script>
+  import CategoryLabel from '~/components/CategoryLabel'
   import Ingredient from '~/components/Ingredient'
 
   export default {
-    components: { Ingredient },
+    components: {
+      CategoryLabel,
+      Ingredient,
+    },
     data() {
       return {
         pizzas: [
           {
             name: 'Margherita',
             ingredients: [
-              'Tomato sauce',
-              'Mozzarella cheese',
-              'Fresh basil',
-              'Olive oil',
+              1,
+              2,
+              5,
+              12,
             ],
           },
           {
             name: 'Marinara',
             ingredients: [
-              'Tomato sauce',
-              'Oregano',
-              'Garlic',
+              1,
+              6,
+              4,
             ],
           },
         ],
       }
     },
-    methods: {
+    computed: {
+      pizzasWithIngredients() {
+        const store = this.$store
+
+        return this.pizzas.map(pizza => {
+          let pizzaClone = { ...pizza }
+
+          pizzaClone.ingredients = pizza.ingredients.map(id => {
+            return store.getters['ingredients/get'](id)
+          })
+
+          return pizzaClone
+        })
+      },
+    },
+    async fetch({ store }) {
+      await store.dispatch('ingredients/fetchList')
     },
   }
 </script>
