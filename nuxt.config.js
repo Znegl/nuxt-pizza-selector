@@ -15,7 +15,7 @@ module.exports = {
     short_name: appName,
     description: appDescription,
     background_color: '#EFE9E1',
-    theme_color: '#47494E'
+    theme_color: '#47494E',
   },
 
   /*
@@ -36,8 +36,10 @@ module.exports = {
         href: '/favicon.png',
       },
       {
-        rel: 'stylesheet',
+        rel: 'preload',
+        as: 'style',
         href: 'https://fonts.googleapis.com/css?family=Enriqueta|Open+Sans',
+        onload: 'this.rel="stylesheet"',
       },
     ],
   },
