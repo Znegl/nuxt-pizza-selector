@@ -1,4 +1,10 @@
 {
   "alias": "www.xn--vlgpizza-j0a.dk",
-  "version": 1
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@now/static-build"
+    }
+  ]
 }

@@ -9,7 +9,8 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
-    "test": "jest"
+    "test": "jest",
+    "now-build": "nuxt build --spa"
   },
   "dependencies": {
     "cross-env": "^5.2.0",
