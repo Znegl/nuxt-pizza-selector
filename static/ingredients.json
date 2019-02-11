@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "name": "Tomato sauce",
+    "subIngredients": []
+  },
+  {
+    "id": 2,
+    "name": "Mozzarella cheese",
+    "subIngredients": [
+      "animalProducts"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Salmon",
+    "subIngredients": [
+      "fish"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Garlic",
+    "subIngredients": []
+  },
+  {
+    "id": 5,
+    "name": "Fresh basil",
+    "subIngredients": []
+  },
+  {
+    "id": 6,
+    "name": "Oregano",
+    "subIngredients": []
+  },
+  {
+    "id": 7,
+    "name": "Bacon",
+    "subIngredients": [
+      "meat"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Ham",
+    "subIngredients": [
+      "meat"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Beef strips",
+    "subIngredients": [
+      "meat"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Onions",
+    "subIngredients": []
+  },
+  {
+    "id": 11,
+    "name": "Potatoes",
+    "subIngredients": []
+  },
+  {
+    "id": 12,
+    "name": "Olive oil",
+    "subIngredients": []
+  }
+]
